@@ -1,0 +1,16 @@
+{
+  "name": "rolo-external-bot",
+  "version": "1.0.0",
+  "description": "Rolo External Bot - support tickets, transcripts, automod and KeyAuth tools",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "avatar": "node src/setAvatar.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3"
+  }
+}
