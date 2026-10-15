@@ -8,7 +8,8 @@ const config = require('./config.json');
  * Usage: put the Rolo logo at assets/avatar.png then run "npm run avatar"
  */
 (async () => {
-  const file = path.resolve(__dirname, 'assets', 'avatar.png');
+  let file = path.resolve(__dirname, 'avatar.png');
+  if (!fs.existsSync(file)) file = path.resolve(__dirname, 'assets', 'avatar.png');
   if (!fs.existsSync(file)) {
     console.error('Missing assets/avatar.png - save the Rolo logo there first.');
     process.exit(1);

@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const tickets = require('../tickets');
-const transcript = require('../transcript');
-const { baseEmbed, COLORS, isRoloStaff } = require('../utils');
+const tickets = require('./tickets');
+const transcript = require('./transcript');
+const { baseEmbed, COLORS, isRoloStaff } = require('./utils');
 
 function staffOnly(i) {
   if (!isRoloStaff(i.member)) {

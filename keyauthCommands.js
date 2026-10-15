@@ -1,8 +1,8 @@
 const crypto = require('node:crypto');
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const config = require('../config.json');
-const keyauth = require('../keyauth');
-const { baseEmbed, COLORS, isRoloStaff } = require('../utils');
+const config = require('./config.json');
+const keyauth = require('./keyauth');
+const { baseEmbed, COLORS, isRoloStaff } = require('./utils');
 
 function genPassword() {
   return crypto.randomBytes(6).toString('base64url');

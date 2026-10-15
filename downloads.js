@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
-const config = require('../config.json');
-const settings = require('../settings');
-const { baseEmbed, COLORS, isCustomer } = require('../utils');
+const config = require('./config.json');
+const settings = require('./settings');
+const { baseEmbed, COLORS, isCustomer } = require('./utils');
 
 /** Link set via /gofileset wins, otherwise falls back to config.json. */
 function currentLink() {

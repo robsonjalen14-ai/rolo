@@ -1,8 +1,8 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const config = require('../config.json');
-const tickets = require('../tickets');
-const settings = require('../settings');
-const { baseEmbed, COLORS, isRoloStaff } = require('../utils');
+const config = require('./config.json');
+const tickets = require('./tickets');
+const settings = require('./settings');
+const { baseEmbed, COLORS, isRoloStaff } = require('./utils');
 
 module.exports = [
   {

@@ -3,7 +3,7 @@ const path = require('node:path');
 const config = require('./config.json');
 const { resolvePath } = require('./utils');
 
-const FILE = resolvePath('./data/settings.json');
+const FILE = resolvePath('./bot-settings.json');
 let cache = null;
 
 function load() {
