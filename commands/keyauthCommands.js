@@ -1,6 +1,6 @@
 const crypto = require('node:crypto');
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const config = require('../../config.json');
+const config = require('../config.json');
 const keyauth = require('../keyauth');
 const { baseEmbed, COLORS, isRoloStaff } = require('../utils');
 

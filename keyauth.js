@@ -1,4 +1,4 @@
-const config = require('../config.json');
+const config = require('./config.json');
 
 const API_URL = (config.KEYAUTH && config.KEYAUTH.API_URL) || 'https://keyauth.win/api/1.3/';
 const SELLER_URL = (config.KEYAUTH && config.KEYAUTH.SELLER_URL) || 'https://keyauth.win/api/seller/';

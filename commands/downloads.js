@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
-const config = require('../../config.json');
+const config = require('../config.json');
 const settings = require('../settings');
 const { baseEmbed, COLORS, isCustomer } = require('../utils');
 

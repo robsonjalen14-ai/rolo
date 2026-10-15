@@ -1,14 +1,14 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, GatewayIntentBits } = require('discord.js');
-const config = require('../config.json');
+const config = require('./config.json');
 
 /**
  * One-off script: sets the bot avatar from assets/avatar.png
  * Usage: put the Rolo logo at assets/avatar.png then run "npm run avatar"
  */
 (async () => {
-  const file = path.resolve(__dirname, '..', 'assets', 'avatar.png');
+  const file = path.resolve(__dirname, 'assets', 'avatar.png');
   if (!fs.existsSync(file)) {
     console.error('Missing assets/avatar.png - save the Rolo logo there first.');
     process.exit(1);

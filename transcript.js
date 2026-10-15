@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { AttachmentBuilder } = require('discord.js');
-const config = require('../config.json');
+const config = require('./config.json');
 const { resolvePath } = require('./utils');
 
 const tracked = new Map();

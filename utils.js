@@ -1,6 +1,6 @@
 const path = require('node:path');
 const { EmbedBuilder } = require('discord.js');
-const config = require('../config.json');
+const config = require('./config.json');
 
 const COLORS = {
   BLUE: 0x2f6bff,
@@ -13,7 +13,7 @@ const COLORS = {
 
 /** Resolve a path relative to the bot project root. */
 function resolvePath(p) {
-  return path.resolve(__dirname, '..', String(p).replace(/^\.?[\\/]/, ''));
+  return path.resolve(__dirname, String(p).replace(/^\.?[\\/]/, ''));
 }
 
 function hasRole(member, roleId) {

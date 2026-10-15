@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const config = require('../config.json');
+const config = require('./config.json');
 const { resolvePath } = require('./utils');
 
 const FILE = resolvePath('./data/settings.json');

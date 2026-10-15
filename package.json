@@ -2,10 +2,11 @@
   "name": "rolo-external-bot",
   "version": "1.0.0",
   "description": "Rolo External Bot - support tickets, transcripts, automod and KeyAuth tools",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "avatar": "node src/setAvatar.js"
+    "start": "node index.js",
+    "avatar": "node setAvatar.js",
+    "sync": "git add -A && git commit -m update && git push"
   },
   "engines": {
     "node": ">=18"

@@ -1,5 +1,5 @@
 const { PermissionFlagsBits } = require('discord.js');
-const config = require('../config.json');
+const config = require('./config.json');
 const settings = require('./settings');
 const { COLORS, baseEmbed, isRoloStaff } = require('./utils');
 

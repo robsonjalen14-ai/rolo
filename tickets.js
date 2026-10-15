@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { ChannelType, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, ButtonBuilder, ButtonStyle, PermissionFlagsBits } = require('discord.js');
-const config = require('../config.json');
+const config = require('./config.json');
 const { COLORS, baseEmbed, resolvePath, hasRole, isRoloStaff } = require('./utils');
 const transcript = require('./transcript');
 
