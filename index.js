@@ -5,6 +5,8 @@ const tickets = require('./tickets');
 const automod = require('./automod');
 const settings = require('./settings');
 const transcript = require('./transcript');
+const verify = require('./verify');
+const webserver = require('./webserver');
 
 const client = new Client({
   intents: [
@@ -51,6 +53,9 @@ client.once(Events.ClientReady, async (c) => {
 
   console.log(`[ready] ${config.BOT_NAME} logged in as ${c.user.tag} | status: ${status}`);
 
+  verify.setClient(c);
+  webserver.start();
+
   if (config.KEYAUTH && config.KEYAUTH.NAME) {
     const keyauth = require('./keyauth');
     const ka = await keyauth.init();
@@ -68,6 +73,8 @@ client.on(Events.InteractionCreate, async (i) => {
       const cmd = commands.get(i.commandName);
       if (!cmd) return;
       await cmd.execute(i, client);
+    } else if (i.isButton() && i.customId === 'verify:button') {
+      await verify.handleButton(i);
     } else if (i.isStringSelectMenu() && i.customId.startsWith('ticket:')) {
       await tickets.handleSelect(i, client);
     } else if (i.isButton() && i.customId.startsWith('ticket-')) {

@@ -2,6 +2,7 @@ const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 const config = require('./config.json');
 const tickets = require('./tickets');
 const settings = require('./settings');
+const verify = require('./verify');
 const { baseEmbed, COLORS, isRoloStaff } = require('./utils');
 
 module.exports = [
@@ -83,6 +84,21 @@ module.exports = [
         ],
         ephemeral: true,
       });
+    },
+  },
+  {
+    data: new SlashCommandBuilder()
+      .setName('verifypanel')
+      .setDescription('Post the verification panel (Verify button + Discord OAuth).')
+      .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
+      .setDMPermission(false),
+    async execute(i) {
+      if (!isRoloStaff(i.member)) return i.reply({ content: 'Only the Rolo staff role can use this command.', ephemeral: true });
+      if (!verify.publicUrl()) {
+        return i.reply({ content: 'Set `WEB.PUBLIC_URL` in config.json first - the verify link needs a public address.', ephemeral: true });
+      }
+      await i.channel.send(verify.buildPanel());
+      return i.reply({ content: '\u2705 Verification panel posted.', ephemeral: true });
     },
   },
 ];
